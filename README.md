@@ -19,7 +19,7 @@ This script has been made for you due to the problem of deleting the monthly vid
 
 ## Initial setup
 
-On Windows, download latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe) & [Ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z) & [KMPlayer](https://soft98.ir/multi-media/video-player/278-kmplayer-dl.html) and install them.
+On Windows, download latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe) & [Ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z) & [KMPlayer](https://soft98.ir/multi-media/video-player/278-kmplayer-dl.html) and install Python and KMPlayer.
 
 On Ubuntu, open your terminal by pressing Ctrl+Alt+T and install the FFmpeg and Python package, by typing:
 ```
@@ -32,10 +32,12 @@ sudo apt-get install kmplayer
 ## How it works
 
 If you are a Windows user, extract after downloading the code, then copy ffmpeg.exe to that folder, else this unnecessary.
-![](https://uupload.ir/files/v7td_screenshot_2021-03-31_140544.png)
+
+![one](https://uupload.ir/files/v7td_screenshot_2021-03-31_140544.png)
 
 In order to have a video version of the held class, you need to get the address of the desired class as follows:
-![](https://uupload.ir/files/1k84_screenshot_2021-03-31_134100.png)
+
+![two](https://uupload.ir/files/1k84_screenshot_2021-03-31_134100.png)
 
 Then open commands.text and insert command as following and pressing Ctrl+s:
 ```

@@ -51,7 +51,7 @@ python main.py
 
 At the end, follow the instructions that you see inside Terminal or PowerShell.
 
-# Output
+## Output
 Video file format flv which is stored in the Output folder and can be played with the software KMPlayer.
 
 # License

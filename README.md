@@ -21,7 +21,7 @@ This script has been made for you due to the problem of deleting the monthly vid
 
 On Windows, download latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe) & [Ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z) & [KMPlayer](https://soft98.ir/multi-media/video-player/278-kmplayer-dl.html) and install Python and KMPlayer.
 
-On Ubuntu, open your terminal by pressing Ctrl+Alt+T and install the FFmpeg and Python package, by typing:
+On Ubuntu, open your terminal by pressing Ctrl+Alt+T and install the FFmpeg & KMPlayer & Python package, by typing:
 ```
 sudo apt-get update
 sudo apt-get install ffmpeg

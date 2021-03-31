@@ -98,6 +98,8 @@ def convert_to_mp4(confirmation):
                 if len(flv_files_name) != 0:
                     run_command(f"ffmpeg -safe 0 -f concat -i {folder_path}/inputs.txt -c copy {folder_path}/output_2.flv")
                     run_command(f"ffmpeg -i {folder_path}/output_1.flv -i {folder_path}/output_2.flv -acodec copy -vcodec copy ./output/{output_file_name}.flv")
+                else:
+                    os.rename(f"{folder_path}/output_1.flv", f"./output/{output_file_name}.flv")
                 shutil.rmtree(f"{folder_path}")
                 print("Done!")
         else:

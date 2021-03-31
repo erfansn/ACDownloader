@@ -1,7 +1,7 @@
 # ACDownloader
 This script has been made for you due to the problem of deleting the monthly video files of the virtual class of Tabriz University and not adding the possibility of offline download within the site.
 
-💎Enjoy it.💎
+💎 Enjoy it 💎
 
 ## Contents
 

@@ -21,7 +21,7 @@ This script has been made for you due to the problem of deleting the monthly vid
 
 On Windows, download latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe) & [Ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z) & [KMPlayer](https://soft98.ir/multi-media/video-player/278-kmplayer-dl.html) and install Python and KMPlayer.
 
-On Ubuntu, open your terminal by pressing Ctrl+Alt+T and install the FFmpeg & KMPlayer & Python package, by typing:
+On Ubuntu, open your terminal by pressing `Ctrl+Alt+T` and install the FFmpeg & KMPlayer & Python package, by typing:
 ```
 sudo apt-get update
 sudo apt-get install ffmpeg
@@ -31,7 +31,7 @@ sudo apt-get install kmplayer
 
 ## How it works
 
-If you are a Windows user, extract after downloading the code, then copy ffmpeg.exe to that folder, else this unnecessary.
+If you are a Windows user, extract after downloading the code, then copy `ffmpeg.exe` to that folder, else this unnecessary.
 
 ![one](https://uupload.ir/files/v7td_screenshot_2021-03-31_140544.png)
 
@@ -39,7 +39,7 @@ In order to have a video version of the held class, you need to get the address 
 
 ![two](https://uupload.ir/files/1k84_screenshot_2021-03-31_134100.png)
 
-Then open commands.text and insert command as following and pressing Ctrl+s:
+Then open commands.text and insert command as following and pressing `Ctrl+s`:
 ```
 echo class_link_1 > saved_file_name_1
 echo class_link_2 > saved_file_name_2
@@ -54,8 +54,7 @@ python main.py
 At the end, follow the instructions that you see inside Terminal or PowerShell.
 
 ## Output
-Video file format flv which is stored in the Output folder and can be played with the software KMPlayer.
-
+If the master has used the `share screen` feature, the output will be a video file in `flv` format, otherwise an audio file will be saved in the `output` folder.
 # License
 ```
 Copyright 2021 ErfanSn

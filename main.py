@@ -57,12 +57,12 @@ def init(tryy):
 
             confirmation = input(
                 r'If the files are downloaded, put them in the "input" folder then Enter "s" and for exit Enter any.' + "\n")
-            convert_to_video(confirmation)
+            convert_to_video_or_audio(confirmation)
         else:
             init(input('Not exists commands. Try it Enter "t" and for exit Enter any.' + "\n"))
 
 
-def convert_to_video(confirmation):
+def convert_to_video_or_audio(confirmation):
     if confirmation == "s":
         downloaded_files = os.listdir("./input")
         output_files_name = [name[:-4] for name in downloaded_files if name.endswith(".zip")]
@@ -106,7 +106,7 @@ def convert_to_video(confirmation):
             print("Not file found!")
             again_confirmation = input(
                 'If you transfer files to a folder "input" make sure Enter "s" and for exit Enter any.' + "\n")
-            convert_to_video(again_confirmation)
+            convert_to_video_or_audio(again_confirmation)
 
 
 if __name__ == "__main__":

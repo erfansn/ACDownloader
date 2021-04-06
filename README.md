@@ -9,7 +9,7 @@ This script has been made for you due to the problem of deleting the monthly vid
 2. [Initial setup](#initial-setup)
 3. [How it works](#how-it-works)
 4. [Output](#output)
-5. [Known Issues](#known-issues)
+5. [Known issues](#known-issues)
 6. [License](#license)
 
 ## Requirements
@@ -58,7 +58,7 @@ At the end, follow the instructions that you see inside Terminal or PowerShell.
 
 If the master has used the `share screen` feature, the output will be a video file in `flv` format, otherwise an audio file will be saved in the `output` folder.
 
-## Known Issues
+## Known issues
 
 - If the teacher allows a student to speak, the sound will not be inserted into the output at the appropriate time
 

@@ -30,6 +30,12 @@ sudo apt-get install python3.8
 sudo apt-get install kmplayer
 ```
 
+On Android, install [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en) and [KMPlayer](https://play.google.com/store/apps/details?id=com.kmplayer&hl=fa&gl=US) and enter following commands in Termux:
+```
+pkg install python
+pkg install ffmpeg
+```
+
 ## How it works
 
 If you are a Windows user, extract after downloading the code, then copy `ffmpeg.exe` to that folder, else this unnecessary.
@@ -47,12 +53,17 @@ echo class_link_2 > saved_file_name_2
 ...
 ```
 
-Now hold `shift` and `right click` on the code folder and select Terminal or PowerShell and enter the following command:
+Now, if you are a Windows user hold `shift` and `right click` on the code folder and select Terminal or PowerShell and enter the following command:
 ```
 python main.py
 ```
+Otherwise:
+```
+cd code_folder_path
+python main.py
+```
 
-At the end, follow the instructions that you see inside Terminal or PowerShell.
+At the end, follow the instructions that you see inside Terminal or PowerShell or Termux.
 
 ## Output
 

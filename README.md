@@ -30,6 +30,12 @@ sudo apt-get install python3.8
 sudo apt-get install kmplayer
 ```
 
+On Android, install [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en) and [KMPlayer](https://play.google.com/store/apps/details?id=com.kmplayer&hl=fa&gl=US) and enter following commands in Termux:
+```
+pkg install python
+pkg install ffmpeg
+```
+
 ## How it works
 
 If you are a Windows user, extract after downloading the code, then copy `ffmpeg.exe` to that folder, else this unnecessary.

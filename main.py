@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import webbrowser
 import zipfile
-import xmltodict
+import xml.etree.ElementTree as ET
 
 from pathlib import Path
 
@@ -65,23 +65,23 @@ def init(tryy):
 
 def get_fixed_audio_times(folder_name):
     mainstream_path = f"{folder_name}/mainstream.xml"
-    with open(mainstream_path) as file:
-        mainstream = xmltodict.parse(file.read())
+    root = ET.parse(mainstream_path).getroot()
     first_stream = None
     audio_times = {}
-    for event in mainstream["root"]["Message"]:
-        if event.get("Method") and event.get("String") and event.get("Array") and event.get("Array").get("Object"):
-            if event.get("String") != "streamAdded" and event.get("String") != "streamRemoved":
+    for message in root.findall("Message"):
+        if message.find("Method") is not None and message.find("String") is not None and message.find("Array") is not None and message.find("Array/Object") is not None:
+            if message.find("String").text != "streamAdded" and message.find("String").text != "streamRemoved":
                 continue
-            event_name = event["Array"]["Object"]["streamName"].replace('/', '') + ".flv"
+            event_name = message.find("Array/Object/streamName").text.replace('/', '') + ".flv"
+
             if not first_stream:
                 first_stream = event_name
-            if event.get("String") == "streamAdded":
+            if message.find("String").text == "streamAdded":
                 if not event_name in audio_times:
                     audio_times[event_name] = list()
-                audio_times[event_name].append(int(event["@time"]))
-            elif event.get("String") == "streamRemoved":
-                end_time = int(event["@time"])
+                audio_times[event_name].append(int(message.get("time")))
+            elif message.find("String").text == "streamRemoved":
+                end_time = int(message.get("time"))
                 if end_time > audio_times[event_name][0]:
                     audio_times[event_name].append(end_time)
                 else:

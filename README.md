@@ -20,9 +20,9 @@ This script has been made for you due to the problem of deleting the monthly vid
 
 ## Initial setup
 
-On Windows, download latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe) & [Ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z) & [KMPlayer](https://soft98.ir/multi-media/video-player/278-kmplayer-dl.html) and install Python and KMPlayer.
+On **Windows**, download latest version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe) & [Ffmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z) & [KMPlayer](https://soft98.ir/multi-media/video-player/278-kmplayer-dl.html) and install Python and KMPlayer.
 
-On Ubuntu, open your terminal by pressing `Ctrl+Alt+T` and install the FFmpeg & KMPlayer & Python package, by typing:
+On **Ubuntu**, open your terminal by pressing `Ctrl+Alt+T` and install the FFmpeg & KMPlayer & Python package, by typing:
 ```
 sudo apt-get update
 sudo apt-get install ffmpeg
@@ -30,7 +30,7 @@ sudo apt-get install python3.8
 sudo apt-get install kmplayer
 ```
 
-On Android, install [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en) and [KMPlayer](https://play.google.com/store/apps/details?id=com.kmplayer&hl=fa&gl=US) and enter following commands in Termux:
+On **Android**, install [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en) and [KMPlayer](https://play.google.com/store/apps/details?id=com.kmplayer&hl=fa&gl=US) and enter following commands in Termux:
 ```
 pkg install python
 pkg install ffmpeg

@@ -63,11 +63,11 @@ def init(tryy):
             init(input('Not exists commands. Try it Enter "t" and for exit Enter any.' + "\n"))
 
 
-def get_fixed_audio_times(folder_name):
+def get_fixed_times(folder_name):
     mainstream_path = f"{folder_name}/mainstream.xml"
     root = ET.parse(mainstream_path).getroot()
     first_stream = None
-    audio_times = {}
+    fixed_times = {}
     for message in root.findall("Message"):
         if message.find("Method") is not None and message.find("String") is not None and message.find("Array") is not None and message.find("Array/Object") is not None:
             if message.find("String").text != "streamAdded" and message.find("String").text != "streamRemoved":
@@ -77,22 +77,22 @@ def get_fixed_audio_times(folder_name):
             if not first_stream:
                 first_stream = event_name
             if message.find("String").text == "streamAdded":
-                if not event_name in audio_times:
-                    audio_times[event_name] = list()
-                audio_times[event_name].append(int(message.get("time")))
+                if not event_name in fixed_times:
+                    fixed_times[event_name] = list()
+                fixed_times[event_name].append(int(message.get("time")))
             elif message.find("String").text == "streamRemoved":
                 end_time = int(message.get("time"))
-                if end_time > audio_times[event_name][0]:
-                    audio_times[event_name].append(end_time)
+                if end_time > fixed_times[event_name][0]:
+                    fixed_times[event_name].append(end_time)
                 else:
-                    audio_times.pop(event_name)
+                    fixed_times.pop(event_name)
 
-    for ev in audio_times:
-        audio_times[ev][0] = audio_times[ev][0] - audio_times[first_stream][0]
-        if len(audio_times[ev]) == 2:
-            audio_times[ev][1] = audio_times[ev][1] - audio_times[first_stream][0]
+    for ev in fixed_times:
+        fixed_times[ev][0] = fixed_times[ev][0] - fixed_times[first_stream][0]
+        if len(fixed_times[ev]) == 2:
+            fixed_times[ev][1] = fixed_times[ev][1] - fixed_times[first_stream][0]
 
-    return audio_times
+    return fixed_times
 
 
 def convert_to_video_or_audio(confirmation):
@@ -109,7 +109,7 @@ def convert_to_video_or_audio(confirmation):
 
             print("Processing files...")
             for folder_path, output_file_name in zip(folders_path, output_files_name):
-                times = get_fixed_audio_times(folder_path)
+                times = get_fixed_times(folder_path)
 
                 flv_files = os.listdir(f"{folder_path}")
                 flv_files_name = [name for name in flv_files if re.match("cameraVoip(.*)+.flv", name)]
@@ -126,19 +126,17 @@ def convert_to_video_or_audio(confirmation):
                 map_str = "".join(a for a in map_file) + "".join(f"[{i}a]" for i in range(len(map_file))) + f"amix=inputs={len(map_file)}[a]"
 
                 # https://stackoverflow.com/questions/60027460/how-to-add-multiple-audio-files-at-specific-times-on-a-silence-audio-file-using
-                run_command(f"ffmpeg {input_str} -filter_complex \"{map_str}\" -map \"[a]\" {folder_path}/output_1.flv")
+                run_command(f"ffmpeg -y {input_str} -filter_complex \"{map_str}\" -map \"[a]\" {folder_path}/output_1.flv")
 
                 with open(f"{folder_path}/inputs.txt", 'w') as flvs:
-                    flv_files = os.listdir(f"{folder_path}")
-                    flv_files_name = [name for name in flv_files if re.match("screenshare(.*)+.flv", name)]
+                    flv_files_name = [name for name in times if name.startswith("screenshare")]
 
-                    sort_files_name(flv_files_name)
                     for flv in flv_files_name:
                         flvs.write(f"file {flv}\n")
 
                 if len(flv_files_name) != 0:
-                    run_command(f"ffmpeg -safe 0 -f concat -i {folder_path}/inputs.txt -c copy {folder_path}/output_2.flv")
-                    run_command(f"ffmpeg -i {folder_path}/output_1.flv -i {folder_path}/output_2.flv -acodec copy -vcodec copy ./output/{output_file_name}.flv")
+                    run_command(f"ffmpeg -y -safe 0 -f concat -i {folder_path}/inputs.txt -c copy {folder_path}/output_2.flv")
+                    run_command(f"ffmpeg -y -i {folder_path}/output_1.flv -i {folder_path}/output_2.flv -acodec copy -vcodec copy ./output/{output_file_name}.flv")
                 else:
                     shutil.move(f"{folder_path}/output_1.flv", f"./output/{output_file_name}.flv")
 

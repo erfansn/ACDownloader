@@ -59,7 +59,7 @@ python main.py
 ```
 Otherwise:
 ```
-cd code folder path
+cd code_folder_path
 python main.py
 ```
 

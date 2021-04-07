@@ -71,7 +71,7 @@ If the master has used the `share screen` feature, the output will be a video fi
 
 ## Known issues
 
-- ~If the teacher allows a student to speak, the sound will not be inserted into the output at the appropriate time~
+- ~If the teacher allows a student to speak or share screen, the audio and video will not be inserted into the output at the appropriate time~
 
 # License
 

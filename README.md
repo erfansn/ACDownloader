@@ -38,13 +38,8 @@ pkg install ffmpeg
 
 ## How it works
 
-If you are a Windows user, extract after downloading the code, then copy `ffmpeg.exe` to that folder, else this unnecessary.
-
-![one](https://uupload.ir/files/v7td_screenshot_2021-03-31_140544.png)
-
-In order to have a video version of the held class, you need to get the address of the desired class as follows:
-
-![two](https://uupload.ir/files/1k84_screenshot_2021-03-31_134100.png)
+- If you are a Windows user, extract after downloading the code, then copy `ffmpeg.exe` to that folder, else this unnecessary.
+- In order to have a video version of the held class, you need to get the address of the desired class.
 
 Then open commands.text and insert command as following and pressing `Ctrl+s`:
 ```
